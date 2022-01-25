@@ -1,9 +1,14 @@
-GrowBuddy
-=========
+GrowBuddy Director
+==================
+A node-red application running on the GrowBuddy Rasp Pi Server that "dials-in" the humidity, CO2 level, and PPFD for the current growth stage of the plants.
+# Sniffer Buddy Flows
+The Sniffer Buddy Flows
+# Dialing in PPFD
+Currently, light levels are not automatically adjusted based on "the best" setpoint given the plants' stage of growth.
 
-Directs sensors and actuators within the GrowBuddy System
+We use the chart in the [FLU Cultivation Guide](../docs/FLU-CultivationGuide_Cannabis_WEB_PROOF_01-2020.pdf):
 
-### About
+![PPFD Levels](../images/ppfd_levels_from_FLU_PDF.jpg)
 
-This is your project's README.md file. It helps users understand what your
-project does, how to use it and anything else they may need to know.
+- [ ] put setpoints into influxdb
+
