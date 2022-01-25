@@ -1,0 +1,1427 @@
+[
+    {
+        "id": "b2b2cf3fbcec5eed",
+        "type": "tab",
+        "label": "SnifferBuddy",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "799f393492615359",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f8b9694fdc50d17f",
+        "type": "tab",
+        "label": "Turn S3 on/off",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a7f76a515c8544a2",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7f5b70e481620d6e",
+        "type": "subflow",
+        "name": "SB - Error Check",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": -20,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "34247234f0668477"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1380,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "23104b00346c1d1f",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "299ed8b77420c170",
+        "type": "subflow",
+        "name": "SB - add readings to influxdb",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 220,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "73136c801db1d7fa"
+                    },
+                    {
+                        "id": "ab4f06407c0edae6"
+                    },
+                    {
+                        "id": "6d28b3d4d68d0354"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "dd5b4280471fc9a9",
+        "type": "group",
+        "z": "b2b2cf3fbcec5eed",
+        "name": "Incoming Sniffer Buddy Readings via mqtt",
+        "style": {
+            "stroke": "#0070c0",
+            "fill": "#bfdbef",
+            "label": true,
+            "label-position": "n",
+            "color": "#000000"
+        },
+        "nodes": [
+            "f581f181cd9850c5",
+            "bc065d6677b1f46b",
+            "16f1e159dc4f3e84",
+            "6a9a0ec21f3d6810",
+            "840d20f7b8b2844b",
+            "fbeb377931dbc8e2",
+            "b6f864048abe85d4",
+            "07098a2be29dd344",
+            "f41c631bb0e33bf4",
+            "504e5db12d254cbb",
+            "eb121a6b1c64fc57",
+            "6c18c78d2e27e1d1",
+            "91d6114c8d9f582b",
+            "573be0a2b1ea622e",
+            "863490e53bc7a204",
+            "e8c381448de3c5aa"
+        ],
+        "x": -6,
+        "y": 219,
+        "w": 1572,
+        "h": 302
+    },
+    {
+        "id": "77fed1c377eed3df",
+        "type": "mqtt-broker",
+        "name": "growbuddy",
+        "broker": "growbuddy",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "120",
+        "cleansession": true,
+        "birthTopic": "stat/plug_fillerup/POWER",
+        "birthQos": "0",
+        "birthPayload": "ON",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2a76ce87b12bff46",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "c4c5fd20d17bb07c",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "ab7d13904246734b",
+        "type": "influxdb",
+        "hostname": "growbuddy",
+        "port": "8086",
+        "protocol": "http",
+        "database": "growbuddy",
+        "name": "growbuddy",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "34247234f0668477",
+        "type": "function",
+        "z": "7f5b70e481620d6e",
+        "name": "Check if we're getting valid readings",
+        "func": "\n/* ASSUMPTIONS:\n- Humidity should read at least greater than 30 (percent) and less than or equal to 100.\n- Temperature should read at least greater than 50 (degrees F) and less than 100 degrees F.\n- CO2 level should read at least 350 (ppm) and less than 1800.\n*/\n\n/* I did separate if statements because of the way I was finding\nerrors coming in.  If the I2C interface isn't working, there \nis a different error than if the I2C interface is working but the \nthe sensor is not.\n*/\n if (msg.payload == \"read-measurement\") {\n    node.warn(\"** Error: Check Sensor.  I2C interface is not working...\");\n    msg.payload.good_readings = false;\n    return msg;\n    \n}\nif (msg.payload.SCD30== undefined){\n    node.warn(\"** ERROR: Not getting SCD30 readings...\");\n    msg.payload.good_readings = false;\n    return msg;\n}\n/* Convert Temp reading to F from C */\nmsg.payload.SCD30.Temperature = msg.payload.SCD30.Temperature*9/5 + 32;\n/* The Sensor could be sending bad readings */\n\nif (isNaN(msg.payload.SCD30.CarbonDioxide) ){\n    node.warn(\"** ERROR: Check Sensor. Not getting valid readings. ..\");\n    msg.payload.good_readings = false;\n    \n}else if (msg.payload.SCD30.Humidity < 30 || msg.payload.SCD30.Humidity > 100){\n    node.warn(\"** ERROR: Check Sensor. Humidity reading is \"+msg.payload.Humidity);\n    msg.payload.good_readings = false;\n}else if (msg.payload.SCD30.Temperature < 50 || msg.payload.SCD30.Temperature > 90){\n    node.warn(\"** ERROR: Check Sensor. Temperature reading is \"+msg.payload.SCD30.Temperature);\n    msg.payload.good_readings = false;\n}else if (msg.payload.SCD30.CarbonDioxide < 350 || msg.payload.SCD30.CarbonDioxide > 1800){\n    node.warn(\"** ERROR: Check Sensor. CO2 level reading is \"+msg.payload.SCD30.CarbonDioxide);\n    msg.payload.good_readings = false;\n}\nelse {\n    msg.payload.good_readings = true;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 100,
+        "wires": [
+            [
+                "3c657af948247c47"
+            ]
+        ],
+        "inputLabels": [
+            "Unvalidated Sensor Readings"
+        ],
+        "outputLabels": [
+            "Validated Sensor readings"
+        ]
+    },
+    {
+        "id": "3c657af948247c47",
+        "type": "switch",
+        "z": "7f5b70e481620d6e",
+        "name": "true if we are getting readings",
+        "property": "payload.good_readings",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 100,
+        "wires": [
+            [
+                "96ad718c50324646"
+            ],
+            [
+                "232789a045a98448"
+            ]
+        ]
+    },
+    {
+        "id": "23104b00346c1d1f",
+        "type": "change",
+        "z": "7f5b70e481620d6e",
+        "name": "set snifferBuddy_working to true",
+        "rules": [
+            {
+                "t": "set",
+                "p": "snifferBuddy_working",
+                "pt": "global",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1190,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "232789a045a98448",
+        "type": "change",
+        "z": "7f5b70e481620d6e",
+        "name": "add 1 to n_bad_readings",
+        "rules": [
+            {
+                "t": "set",
+                "p": "n_bad_readings",
+                "pt": "flow",
+                "to": "$flowContext(\"n_bad_readings\")+1",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 160,
+        "wires": [
+            [
+                "7c2d03e0b4809e9e",
+                "5c0e2f583f51111c"
+            ]
+        ]
+    },
+    {
+        "id": "7c2d03e0b4809e9e",
+        "type": "switch",
+        "z": "7f5b70e481620d6e",
+        "name": "n_bad_readings > 3?",
+        "property": "n_bad_readings",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "3",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1220,
+        "y": 100,
+        "wires": [
+            [
+                "5746a4c7a8a82e23"
+            ]
+        ]
+    },
+    {
+        "id": "5c0e2f583f51111c",
+        "type": "function",
+        "z": "7f5b70e481620d6e",
+        "name": "print n_bad_readings",
+        "func": "msg.payload = \"number of bad readings: \" + flow.get(\"n_bad_readings\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 200,
+        "wires": [
+            [
+                "4408918677e3640b"
+            ]
+        ]
+    },
+    {
+        "id": "4408918677e3640b",
+        "type": "debug",
+        "z": "7f5b70e481620d6e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1430,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "96ad718c50324646",
+        "type": "change",
+        "z": "7f5b70e481620d6e",
+        "name": "set n_bad_readings to 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "n_bad_readings",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 40,
+        "wires": [
+            [
+                "23104b00346c1d1f"
+            ]
+        ]
+    },
+    {
+        "id": "5746a4c7a8a82e23",
+        "type": "change",
+        "z": "7f5b70e481620d6e",
+        "name": "set snifferBuddy_working to false",
+        "rules": [
+            {
+                "t": "set",
+                "p": "snifferBuddy_working",
+                "pt": "global",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1520,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a0ea1b32b045e152",
+        "type": "config",
+        "z": "7f5b70e481620d6e",
+        "name": "State Variables",
+        "properties": [
+            {
+                "p": "n_bad_readings",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "active": true,
+        "x": 460,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ea57ab63d4689d43",
+        "type": "debug",
+        "z": "299ed8b77420c170",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "73136c801db1d7fa",
+        "type": "change",
+        "z": "299ed8b77420c170",
+        "name": "CO2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.SCD30.CarbonDioxide",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "CO2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 120,
+        "wires": [
+            [
+                "715ab9fd33f18591"
+            ]
+        ]
+    },
+    {
+        "id": "ab4f06407c0edae6",
+        "type": "change",
+        "z": "299ed8b77420c170",
+        "name": "Humidity",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.SCD30.Humidity",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Humidity",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "715ab9fd33f18591"
+            ]
+        ]
+    },
+    {
+        "id": "715ab9fd33f18591",
+        "type": "join",
+        "z": "299ed8b77420c170",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 600,
+        "y": 160,
+        "wires": [
+            [
+                "ea57ab63d4689d43",
+                "c756ccc1259c0c8d"
+            ]
+        ]
+    },
+    {
+        "id": "6d28b3d4d68d0354",
+        "type": "change",
+        "z": "299ed8b77420c170",
+        "name": "Temperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.SCD30.Temperature",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Temperature",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 240,
+        "wires": [
+            [
+                "715ab9fd33f18591"
+            ]
+        ]
+    },
+    {
+        "id": "c756ccc1259c0c8d",
+        "type": "influxdb out",
+        "z": "299ed8b77420c170",
+        "influxdb": "ab7d13904246734b",
+        "name": "snifferbuddy readings to influxdb",
+        "measurement": "readings",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 860,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "4724912cabff749a",
+        "type": "config",
+        "z": "b2b2cf3fbcec5eed",
+        "name": "Sniffer Buddy Variables",
+        "properties": [
+            {
+                "p": "CO2_level",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "p": "Temperature",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "p": "Humidity",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            },
+            {
+                "p": "Light_ONorOFF",
+                "pt": "flow",
+                "to": "OFF",
+                "tot": "str"
+            },
+            {
+                "p": "CONST_LIGHT_ON_OFF_THRESHOLD",
+                "pt": "flow",
+                "to": "700",
+                "tot": "num"
+            }
+        ],
+        "active": true,
+        "x": 310,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "627d37df22406854",
+        "type": "config",
+        "z": "b2b2cf3fbcec5eed",
+        "name": "Global Variables",
+        "properties": [
+            {
+                "p": "snifferBuddy_working",
+                "pt": "global",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "active": true,
+        "x": 640,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "5a3e1a02488e5602",
+        "type": "inject",
+        "z": "b2b2cf3fbcec5eed",
+        "name": "PPFD Settings",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"PPFD\":{\"week1\":100,\"week2\":250,\"week3\":300,\"week4\":500,\"week5\":650}}",
+        "payloadType": "json",
+        "x": 590,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6128f7ed51f44173",
+        "type": "change",
+        "z": "b2b2cf3fbcec5eed",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f581f181cd9850c5",
+        "type": "mqtt in",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "Sniffer Buddy readings",
+        "topic": "tele/snifferbuddy/SENSOR",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "77fed1c377eed3df",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 320,
+        "wires": [
+            [
+                "16f1e159dc4f3e84"
+            ]
+        ]
+    },
+    {
+        "id": "bc065d6677b1f46b",
+        "type": "subflow:7f5b70e481620d6e",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "",
+        "x": 470,
+        "y": 320,
+        "wires": [
+            [
+                "504e5db12d254cbb"
+            ]
+        ]
+    },
+    {
+        "id": "16f1e159dc4f3e84",
+        "type": "json",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 310,
+        "y": 320,
+        "wires": [
+            [
+                "bc065d6677b1f46b"
+            ]
+        ]
+    },
+    {
+        "id": "6a9a0ec21f3d6810",
+        "type": "change",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "set flow Variables",
+        "rules": [
+            {
+                "t": "set",
+                "p": "CO2",
+                "pt": "flow",
+                "to": "payload.SCD30.CarbonDioxide",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "Humidity",
+                "pt": "flow",
+                "to": "payload.SCD30.Humidity",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "Temperature",
+                "pt": "flow",
+                "to": "payload.SCD30.Temperature",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "Light_ONorOFF",
+                "pt": "flow",
+                "to": "payload.ANALOG.A0 > $flowContext(\"CONST_LIGHT_ON_OFF_THRESHOLD\") ? \"ON\" : \"OFF\"",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 320,
+        "wires": [
+            [
+                "fbeb377931dbc8e2"
+            ]
+        ]
+    },
+    {
+        "id": "840d20f7b8b2844b",
+        "type": "mqtt in",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "Sniffer Buddy LWT",
+        "topic": "tele/snifferbuddy/LWT",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "77fed1c377eed3df",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 420,
+        "wires": [
+            [
+                "07098a2be29dd344"
+            ]
+        ]
+    },
+    {
+        "id": "fbeb377931dbc8e2",
+        "type": "change",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "put LED on/off in msg",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Light_ONorOFF",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1220,
+        "y": 320,
+        "wires": [
+            [
+                "b6f864048abe85d4"
+            ]
+        ]
+    },
+    {
+        "id": "b6f864048abe85d4",
+        "type": "rbe",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "Block unless LED on/off changes",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1080,
+        "y": 380,
+        "wires": [
+            [
+                "f41c631bb0e33bf4",
+                "e8c381448de3c5aa"
+            ]
+        ]
+    },
+    {
+        "id": "07098a2be29dd344",
+        "type": "function",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "INFO: mqtt broker online or offline",
+        "func": "\nnode.warn(\"***> INFO: mqtt broker is \"+ msg.payload );\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 420,
+        "wires": [
+            [
+                "573be0a2b1ea622e"
+            ]
+        ]
+    },
+    {
+        "id": "f41c631bb0e33bf4",
+        "type": "e-mail",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "happyday.mjohnson@gmail.com",
+        "dname": "Send Lights ON/OFF email",
+        "x": 1300,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "504e5db12d254cbb",
+        "type": "switch",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "snifferBuddy_working?",
+        "property": "snifferBuddy_working",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 320,
+        "wires": [
+            [
+                "6a9a0ec21f3d6810",
+                "863490e53bc7a204"
+            ],
+            [
+                "6c18c78d2e27e1d1"
+            ]
+        ]
+    },
+    {
+        "id": "eb121a6b1c64fc57",
+        "type": "e-mail",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "happyday.mjohnson@gmail.com",
+        "dname": "Send not working email",
+        "x": 1030,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "6c18c78d2e27e1d1",
+        "type": "change",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "set msg to SnifferBuddy not working.",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "UHOH!!! SnifferBuddy is not working",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 380,
+        "wires": [
+            [
+                "eb121a6b1c64fc57"
+            ]
+        ]
+    },
+    {
+        "id": "91d6114c8d9f582b",
+        "type": "change",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "handle mqtt broker down.",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "UHOH!!! Growbuddy's mqqt broker is down.",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "snifferBuddy_working",
+                "pt": "global",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 730,
+        "y": 480,
+        "wires": [
+            [
+                "eb121a6b1c64fc57"
+            ]
+        ]
+    },
+    {
+        "id": "573be0a2b1ea622e",
+        "type": "switch",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "is mqtt broker offline?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "Online",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 660,
+        "y": 420,
+        "wires": [
+            [
+                "91d6114c8d9f582b"
+            ]
+        ]
+    },
+    {
+        "id": "863490e53bc7a204",
+        "type": "subflow:299ed8b77420c170",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "",
+        "x": 1120,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "e8c381448de3c5aa",
+        "type": "influxdb out",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "influxdb": "ab7d13904246734b",
+        "name": "record light on/off event in influxdb",
+        "measurement": "light",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1400,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "68daa8883d202e0f",
+        "type": "Sonoff device Enhanced",
+        "z": "f8b9694fdc50d17f",
+        "mode": "0",
+        "broker": "77fed1c377eed3df",
+        "device": "plug_fillerup",
+        "name": "TEST",
+        "onValue": "ON",
+        "offValue": "OFF",
+        "toggleValue": "toggle",
+        "cmdPrefix": "cmnd",
+        "statPrefix": "stat",
+        "telePrefix": "tele",
+        "x": 570,
+        "y": 200,
+        "wires": [
+            [
+                "f788a23cb2f3d135"
+            ]
+        ]
+    },
+    {
+        "id": "89e101f62bed5943",
+        "type": "inject",
+        "z": "f8b9694fdc50d17f",
+        "name": "TOGGLE",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "cmnd/plug_fillerup/POWER",
+        "payload": "toggle",
+        "payloadType": "str",
+        "x": 220,
+        "y": 220,
+        "wires": [
+            [
+                "68daa8883d202e0f"
+            ]
+        ]
+    },
+    {
+        "id": "f788a23cb2f3d135",
+        "type": "debug",
+        "z": "f8b9694fdc50d17f",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6b5d09d46f1c0f6c",
+        "type": "inject",
+        "z": "f8b9694fdc50d17f",
+        "name": "ON",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "cmnd/plug_fillerup/POWER",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 210,
+        "y": 300,
+        "wires": [
+            [
+                "68daa8883d202e0f"
+            ]
+        ]
+    },
+    {
+        "id": "c1e1bba532566b46",
+        "type": "inject",
+        "z": "f8b9694fdc50d17f",
+        "name": "OFF",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "cmnd/plug_fillerup/POWER",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 230,
+        "y": 360,
+        "wires": [
+            [
+                "68daa8883d202e0f"
+            ]
+        ]
+    },
+    {
+        "id": "7298078f3ce26848",
+        "type": "comment",
+        "z": "f8b9694fdc50d17f",
+        "name": "README",
+        "info": "Example of turning on and off a Sonoff S3 or S3 lite switch.",
+        "x": 270,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "9bc960db6bc612f2",
+        "type": "inject",
+        "z": "a7f76a515c8544a2",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "Light in ON",
+        "payload": "1023",
+        "payloadType": "str",
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "9382c00b16624f7a"
+            ]
+        ]
+    },
+    {
+        "id": "9382c00b16624f7a",
+        "type": "e-mail",
+        "z": "a7f76a515c8544a2",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": true,
+        "name": "happyday.mjohnson@gmail.com",
+        "dname": "",
+        "x": 660,
+        "y": 240,
+        "wires": []
+    }
+]
