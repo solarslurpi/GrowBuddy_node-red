@@ -2,15 +2,15 @@
     {
         "id": "b2b2cf3fbcec5eed",
         "type": "tab",
-        "label": "SnifferBuddy",
+        "label": "SB incoming readings flow",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "799f393492615359",
+        "id": "a7f76a515c8544a2",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "SB UI flow",
         "disabled": false,
         "info": "",
         "env": []
@@ -21,14 +21,6 @@
         "label": "Turn S3 on/off",
         "disabled": false,
         "info": ""
-    },
-    {
-        "id": "a7f76a515c8544a2",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
     },
     {
         "id": "7f5b70e481620d6e",
@@ -66,13 +58,13 @@
     {
         "id": "299ed8b77420c170",
         "type": "subflow",
-        "name": "SB - add readings to influxdb",
+        "name": "SB - influxdb and grafana",
         "info": "",
         "category": "",
         "in": [
             {
-                "x": 220,
-                "y": 180,
+                "x": 240,
+                "y": 300,
                 "wires": [
                     {
                         "id": "73136c801db1d7fa"
@@ -82,6 +74,9 @@
                     },
                     {
                         "id": "6d28b3d4d68d0354"
+                    },
+                    {
+                        "id": "30145a16f0cec555"
                     }
                 ]
             }
@@ -119,7 +114,8 @@
             "91d6114c8d9f582b",
             "573be0a2b1ea622e",
             "863490e53bc7a204",
-            "e8c381448de3c5aa"
+            "e8c381448de3c5aa",
+            "60d37fa549693ae8"
         ],
         "x": -6,
         "y": 219,
@@ -156,7 +152,7 @@
         "id": "2a76ce87b12bff46",
         "type": "ui_base",
         "theme": {
-            "name": "theme-light",
+            "name": "theme-dark",
             "lightTheme": {
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
@@ -165,107 +161,11 @@
             },
             "darkTheme": {
                 "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
-    },
-    {
-        "id": "c4c5fd20d17bb07c",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
+                "baseColor": "#37adb3",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
                 "edited": true,
                 "reset": false
             },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
             "customTheme": {
                 "name": "Untitled Theme 1",
                 "default": "#4B7930",
@@ -274,16 +174,16 @@
             },
             "themeState": {
                 "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
+                    "default": "#097479",
+                    "value": "#097479",
                     "edited": false
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
+                    "value": "#37adb3",
                     "edited": false
                 },
                 "page-backgroundColor": {
-                    "value": "#fafafa",
+                    "value": "#111111",
                     "edited": false
                 },
                 "page-sidebar-backgroundColor": {
@@ -291,27 +191,27 @@
                     "edited": false
                 },
                 "group-textColor": {
-                    "value": "#1bbfff",
+                    "value": "#66cbd0",
                     "edited": false
                 },
                 "group-borderColor": {
-                    "value": "#ffffff",
+                    "value": "#555555",
                     "edited": false
                 },
                 "group-backgroundColor": {
-                    "value": "#ffffff",
+                    "value": "#333333",
                     "edited": false
                 },
                 "widget-textColor": {
-                    "value": "#111111",
+                    "value": "#eeeeee",
                     "edited": false
                 },
                 "widget-backgroundColor": {
-                    "value": "#0094ce",
+                    "value": "#37adb3",
                     "edited": false
                 },
                 "widget-borderColor": {
-                    "value": "#ffffff",
+                    "value": "#333333",
                     "edited": false
                 },
                 "base-font": {
@@ -327,7 +227,7 @@
             }
         },
         "site": {
-            "name": "Node-RED Dashboard",
+            "name": "Sniffer Buddy",
             "hideToolbar": "false",
             "allowSwipe": "false",
             "lockMenu": "false",
@@ -358,6 +258,119 @@
         "influxdbVersion": "1.x",
         "url": "http://localhost:8086",
         "rejectUnauthorized": true
+    },
+    {
+        "id": "d1840c4451e46f7b",
+        "type": "ui_group",
+        "name": "Readings",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bbc3532f.41ca7",
+        "type": "ui_group",
+        "name": "Readings",
+        "tab": "1ff97cd4.681d5b",
+        "order": 2,
+        "disp": true,
+        "width": 16,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1ff97cd4.681d5b",
+        "type": "ui_tab",
+        "name": "Sniffer Buddy",
+        "icon": "dashboard",
+        "order": 37,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "83aa45e7.130ea8",
+        "type": "ui_group",
+        "name": "test",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "7a0c3262d7dd5dc0",
+        "type": "ui_group",
+        "name": "Buddy Stuff",
+        "tab": "1ff97cd4.681d5b",
+        "order": 1,
+        "disp": true,
+        "width": 16,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8e01c20277d826dd",
+        "type": "ui_spacer",
+        "z": "a7f76a515c8544a2",
+        "name": "spacer",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 2,
+        "width": 14,
+        "height": 1
+    },
+    {
+        "id": "f11f14b1d07cabab",
+        "type": "ui_spacer",
+        "z": "a7f76a515c8544a2",
+        "name": "spacer",
+        "group": "bbc3532f.41ca7",
+        "order": 1,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "4c802cf8f5d8f03a",
+        "type": "ui_spacer",
+        "z": "a7f76a515c8544a2",
+        "name": "spacer",
+        "group": "bbc3532f.41ca7",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f62d27a6ad581772",
+        "type": "ui_spacer",
+        "z": "a7f76a515c8544a2",
+        "name": "spacer",
+        "group": "bbc3532f.41ca7",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2cd9151ed2a112d4",
+        "type": "ui_spacer",
+        "z": "a7f76a515c8544a2",
+        "name": "spacer",
+        "group": "bbc3532f.41ca7",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ec6953a3d013f77d",
+        "type": "ui_spacer",
+        "z": "a7f76a515c8544a2",
+        "name": "spacer",
+        "group": "bbc3532f.41ca7",
+        "order": 9,
+        "width": 3,
+        "height": 1
     },
     {
         "id": "34247234f0668477",
@@ -605,11 +618,12 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 770,
-        "y": 160,
+        "x": 790,
+        "y": 280,
         "wires": []
     },
     {
@@ -638,8 +652,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 390,
-        "y": 120,
+        "x": 410,
+        "y": 240,
         "wires": [
             [
                 "715ab9fd33f18591"
@@ -672,8 +686,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
-        "y": 180,
+        "x": 420,
+        "y": 300,
         "wires": [
             [
                 "715ab9fd33f18591"
@@ -694,14 +708,14 @@
         "joinerType": "str",
         "accumulate": false,
         "timeout": "",
-        "count": "3",
+        "count": "4",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 600,
-        "y": 160,
+        "x": 620,
+        "y": 280,
         "wires": [
             [
                 "ea57ab63d4689d43",
@@ -735,8 +749,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 410,
-        "y": 240,
+        "x": 430,
+        "y": 360,
         "wires": [
             [
                 "715ab9fd33f18591"
@@ -757,9 +771,28 @@
         "retentionPolicyV18Flux": "",
         "org": "organisation",
         "bucket": "bucket",
-        "x": 860,
-        "y": 240,
+        "x": 880,
+        "y": 360,
         "wires": []
+    },
+    {
+        "id": "30145a16f0cec555",
+        "type": "function",
+        "z": "299ed8b77420c170",
+        "name": "calc VPD",
+        "func": "var air_T = msg.payload.SCD30.Temperature;\n/* Assume leaf temp is 2 degrees F less */\nvar leaf_T = air_T - 2;\nvar RH = msg.payload.SCD30.Humidity;\n\n/* see https://www.questclimate.com/vapor-pressure-deficit-indoor-growing-part-3-different-stages-vpd/ */\nleaf_vpd = 3.386*(Math.exp(17.863-9621/(leaf_T+460))-((RH/100)*Math.exp(17.863-9621/(air_T+460))));\nmsg.payload = Number(leaf_vpd.toFixed(2));\nmsg.topic = \"vpd\"\nflow.set(\"vpd\",msg.payload)\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 420,
+        "wires": [
+            [
+                "715ab9fd33f18591"
+            ]
+        ]
     },
     {
         "id": "4724912cabff749a",
@@ -784,12 +817,6 @@
                 "pt": "flow",
                 "to": "0",
                 "tot": "num"
-            },
-            {
-                "p": "Light_ONorOFF",
-                "pt": "flow",
-                "to": "OFF",
-                "tot": "str"
             },
             {
                 "p": "CONST_LIGHT_ON_OFF_THRESHOLD",
@@ -842,8 +869,8 @@
         "topic": "",
         "payload": "{\"PPFD\":{\"week1\":100,\"week2\":250,\"week3\":300,\"week4\":500,\"week5\":650}}",
         "payloadType": "json",
-        "x": 590,
-        "y": 920,
+        "x": 860,
+        "y": 80,
         "wires": [
             []
         ]
@@ -922,7 +949,8 @@
         "y": 320,
         "wires": [
             [
-                "bc065d6677b1f46b"
+                "bc065d6677b1f46b",
+                "60d37fa549693ae8"
             ]
         ]
     },
@@ -1052,14 +1080,14 @@
         "type": "function",
         "z": "b2b2cf3fbcec5eed",
         "g": "dd5b4280471fc9a9",
-        "name": "INFO: mqtt broker online or offline",
-        "func": "\nnode.warn(\"***> INFO: mqtt broker is \"+ msg.payload );\nreturn msg;",
+        "name": "Check if getting mqtt readings.",
+        "func": "if (msg.payload == 'Online') {\n    node.warn(\"***> INFO: receiving readings from Sniffer Buddy.\");\n} else {\n    node.warn(\"***> ERROR: UhOh! Not receiving readings from Sniffer Buddy\");\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
+        "x": 370,
         "y": 420,
         "wires": [
             [
@@ -1071,6 +1099,7 @@
         "id": "f41c631bb0e33bf4",
         "type": "e-mail",
         "z": "b2b2cf3fbcec5eed",
+        "d": true,
         "g": "dd5b4280471fc9a9",
         "server": "smtp.gmail.com",
         "port": "465",
@@ -1117,6 +1146,7 @@
         "id": "eb121a6b1c64fc57",
         "type": "e-mail",
         "z": "b2b2cf3fbcec5eed",
+        "d": true,
         "g": "dd5b4280471fc9a9",
         "server": "smtp.gmail.com",
         "port": "465",
@@ -1167,7 +1197,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "UHOH!!! Growbuddy's mqqt broker is down.",
+                "to": "UHOH!!! Not receiving messages from SnifferBuddy!",
                 "tot": "str"
             },
             {
@@ -1196,7 +1226,7 @@
         "type": "switch",
         "z": "b2b2cf3fbcec5eed",
         "g": "dd5b4280471fc9a9",
-        "name": "is mqtt broker offline?",
+        "name": "are messages being sent?",
         "property": "payload",
         "propertyType": "msg",
         "rules": [
@@ -1209,7 +1239,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 660,
+        "x": 680,
         "y": 420,
         "wires": [
             [
@@ -1223,7 +1253,7 @@
         "z": "b2b2cf3fbcec5eed",
         "g": "dd5b4280471fc9a9",
         "name": "",
-        "x": 1120,
+        "x": 1110,
         "y": 260,
         "wires": []
     },
@@ -1244,6 +1274,661 @@
         "bucket": "bucket",
         "x": 1400,
         "y": 380,
+        "wires": []
+    },
+    {
+        "id": "60d37fa549693ae8",
+        "type": "debug",
+        "z": "b2b2cf3fbcec5eed",
+        "g": "dd5b4280471fc9a9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "14f5cd67.1fbd6b",
+        "type": "ui_template",
+        "z": "a7f76a515c8544a2",
+        "group": "bbc3532f.41ca7",
+        "name": "Temp and Humidity Grafana",
+        "order": 10,
+        "width": 8,
+        "height": 8,
+        "format": "<html>\n<iframe id=\"scd30Frame\" width=\"400px\" height=\"350px\" style = \"overflow:hidden; margin:auto; border:0px solid blue;\"></iframe>\n\n<script>\n//NOTE, more then one chart on a page, rename in the second and following \n//templates the \"myframe\" variable so that every template has a unique name.\n(function(scope) {\n    // watch msg object from Node-RED\n    scope.$watch('msg', function(msg) {\n        // new message received\n        var x = document.getElementById('scd30Frame');\n        x.setAttribute('src', msg.payload); \n        });\n})(scope);\n</script>\n</html>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1340,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aeaaadf4.7dcb",
+        "type": "function",
+        "z": "a7f76a515c8544a2",
+        "name": "Build SCD30 Template",
+        "func": "//NOTE, more then one chart on a page, rename in the second and following \n//templates the \"myframe\" variable so that every template has a unique name.\n\npanelid=2\n\nmsg.payload= \"http://growbuddy:3000/d/7ZzVJ2mRk/snifferbuddy-thv?orgId=1\"+\n\"&refresh=1m\"+\n\"&theme=dark\"+\n\"&from=\"+ msg.fromdate +\n\"&to=\"+ msg.enddate +\n\"&panelId=\"+panelid +\n\"&kiosk\"\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 440,
+        "wires": [
+            [
+                "14f5cd67.1fbd6b",
+                "11c2075d1462ed51"
+            ]
+        ]
+    },
+    {
+        "id": "a4654193.3b49e8",
+        "type": "function",
+        "z": "a7f76a515c8544a2",
+        "name": "SetTimeTodaySofar",
+        "func": "msg.fromdate = \"now/d\";\nmsg.enddate = \"now\";\nflow.set(\"date_offset\",0);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 500,
+        "wires": [
+            [
+                "aeaaadf4.7dcb",
+                "4d9c0d995889eeec",
+                "445ee39e69ac2c9d"
+            ]
+        ]
+    },
+    {
+        "id": "b86713b9963a29c4",
+        "type": "ui_ui_control",
+        "z": "a7f76a515c8544a2",
+        "name": "Page loads",
+        "events": "connect",
+        "x": 570,
+        "y": 500,
+        "wires": [
+            [
+                "a4654193.3b49e8"
+            ]
+        ]
+    },
+    {
+        "id": "a82f23f8e4fcc4ed",
+        "type": "ui_button",
+        "z": "a7f76a515c8544a2",
+        "name": "<< button",
+        "group": "bbc3532f.41ca7",
+        "order": 2,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "<<",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "-1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 420,
+        "wires": [
+            [
+                "c98e9cae51e15458",
+                "dd5f9c2446c06495"
+            ]
+        ]
+    },
+    {
+        "id": "0a3f2c79e6afd0ab",
+        "type": "ui_button",
+        "z": "a7f76a515c8544a2",
+        "name": "Today button",
+        "group": "bbc3532f.41ca7",
+        "order": 8,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Today",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 550,
+        "y": 540,
+        "wires": [
+            [
+                "a4654193.3b49e8"
+            ]
+        ]
+    },
+    {
+        "id": "c98e9cae51e15458",
+        "type": "function",
+        "z": "a7f76a515c8544a2",
+        "name": "set flow.date_offset",
+        "func": "node.warn(\"msg.payload: \" + msg.payload);\nlet date_offset = flow.get(\"date_offset\");\nif ( (msg.payload == 0) || (date_offset+msg.payload > 0)) {\n    flow.set(\"date_offset\",0);\n}else{\n    flow.set(\"date_offset\",date_offset+msg.payload);\n}\nnode.warn(\"date offset: \" + flow.get(\"date_offset\"));\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 420,
+        "wires": [
+            [
+                "0a0bd043a814bf0a"
+            ]
+        ]
+    },
+    {
+        "id": "0a0bd043a814bf0a",
+        "type": "function",
+        "z": "a7f76a515c8544a2",
+        "name": "Set From and end Date/Time",
+        "func": "var p_30d  = 1000*60*60*24*30 ; //30 Days\nvar p_7d  = 1000*60*60*24*7 ; //7 Days\nvar p_1d   =  1000*60*60*24 ; // 1 Day\nvar p_hr = 1000*60*60; //1 Hour\n\nvar d = new Date();\nvar today0h = d.setHours(0,0,0,0); //Timestamp midnight\n\n\n/* Date Offset is negative to show days previous from today */\nmsg.fromdate = today0h + flow.get(\"date_offset\")*p_1d;\nmsg.enddate = msg.fromdate + p_1d;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 440,
+        "wires": [
+            [
+                "aeaaadf4.7dcb",
+                "445ee39e69ac2c9d"
+            ]
+        ]
+    },
+    {
+        "id": "fd90d91defb2be37",
+        "type": "ui_button",
+        "z": "a7f76a515c8544a2",
+        "name": ">> button",
+        "group": "bbc3532f.41ca7",
+        "order": 6,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": ">>",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 320,
+        "y": 540,
+        "wires": [
+            [
+                "c98e9cae51e15458",
+                "4d9c0d995889eeec"
+            ]
+        ]
+    },
+    {
+        "id": "aad8703f8645dced",
+        "type": "config",
+        "z": "a7f76a515c8544a2",
+        "name": "",
+        "properties": [
+            {
+                "p": "date_offset",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "active": true,
+        "x": 590,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "4d9c0d995889eeec",
+        "type": "change",
+        "z": "a7f76a515c8544a2",
+        "name": ">> off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "($flowContext(\"date_offset\") = 0 )? false : true",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 330,
+        "y": 660,
+        "wires": [
+            [
+                "fd90d91defb2be37"
+            ]
+        ]
+    },
+    {
+        "id": "dd5f9c2446c06495",
+        "type": "change",
+        "z": "a7f76a515c8544a2",
+        "name": ">> on",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 210,
+        "y": 480,
+        "wires": [
+            [
+                "fd90d91defb2be37"
+            ]
+        ]
+    },
+    {
+        "id": "11c2075d1462ed51",
+        "type": "change",
+        "z": "a7f76a515c8544a2",
+        "name": "set date string",
+        "rules": [
+            {
+                "t": "set",
+                "p": "fromdate",
+                "pt": "msg",
+                "to": "(\t\t$contains($string(msg.fromdate), \"now\") ? $now( '[M]/[D]/[Y]') : $fromMillis(msg.fromdate,'[M]/[D]/[Y]')\t)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1300,
+        "y": 400,
+        "wires": [
+            [
+                "42ccb0ac682f545e"
+            ]
+        ]
+    },
+    {
+        "id": "42ccb0ac682f545e",
+        "type": "ui_text",
+        "z": "a7f76a515c8544a2",
+        "group": "bbc3532f.41ca7",
+        "order": 4,
+        "width": 2,
+        "height": 1,
+        "name": "date text field",
+        "label": "",
+        "format": "{{msg.fromdate}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1470,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d8bd7de23f9706cd",
+        "type": "ui_template",
+        "z": "a7f76a515c8544a2",
+        "group": "bbc3532f.41ca7",
+        "name": "CO2 Grafana",
+        "order": 11,
+        "width": 8,
+        "height": 8,
+        "format": "<html>\n<iframe id=\"co2Frame\" width=\"400px\" height=\"350px\" style = \"overflow:hidden; margin:auto; border:0px solid blue;\"></iframe>\n\n<script>\n//NOTE, more then one chart on a page, rename in the second and following \n//templates the \"myframe\" variable so that every template has a unique name.\n(function(scope) {\n    // watch msg object from Node-RED\n    scope.$watch('msg', function(msg) {\n        // new message received\n        var x = document.getElementById('co2Frame');\n        x.setAttribute('src', msg.payload); \n        });\n})(scope);\n</script>\n</html>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1290,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "445ee39e69ac2c9d",
+        "type": "function",
+        "z": "a7f76a515c8544a2",
+        "name": "Build CO2 Template",
+        "func": "//NOTE, more then one chart on a page, rename in the second and following \n//templates the \"myframe\" variable so that every template has a unique name.\n\npanelid=2\n\nmsg.payload= \"http://growbuddy:3000/d/b-XXf-iRk/co2?orgId=1\"+\n\"&refresh=1m\"+\n\"&theme=dark\"+\n\"&from=\"+ msg.fromdate +\n\"&to=\"+ msg.enddate +\n\"&panelId=\"+panelid +\n\"&kiosk\"\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 480,
+        "wires": [
+            [
+                "d8bd7de23f9706cd"
+            ]
+        ]
+    },
+    {
+        "id": "a14fd3ef2ef138ec",
+        "type": "ui_date_picker",
+        "z": "a7f76a515c8544a2",
+        "name": "",
+        "label": "Start Date:",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 340,
+        "y": 160,
+        "wires": [
+            [
+                "729d4600fbace227",
+                "1f6c0644360254c9"
+            ]
+        ]
+    },
+    {
+        "id": "729d4600fbace227",
+        "type": "debug",
+        "z": "a7f76a515c8544a2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1f6c0644360254c9",
+        "type": "change",
+        "z": "a7f76a515c8544a2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "grow_start_date",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ff2529cf6ae6b72",
+        "type": "function",
+        "z": "a7f76a515c8544a2",
+        "name": "figure out weeks/days since start of grow",
+        "func": "\nvar oneDay = 1000*60*60*24;\n\n\nconsole.log(Math.floor((diff/oneDay)/7) + \" weeks, \" + Math.floor((diff/oneDay)%7) + \" days\")\nvar date_today = new Date();\nvar date_grow_start = new Date(flow.get(\"grow_start_date\")+1000);\n// To calculate the time difference of two dates\nvar diff = date_today.getTime() - date_grow_start.getTime();\nnode.warn(\"time diff: \" + diff)\n// To calculate the no. of days between two dates\nmsg.payload.weeks = Math.floor((diff/oneDay)/7)\nmsg.payload.datetimestr = msg.payload.weeks + \" weeks, \" + Math.floor((diff/oneDay)%7) + \" days\"\nnode.warn(Math.floor((diff/oneDay)/7) + \" weeks, \" + Math.floor((diff/oneDay)%7) + \" days\")\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 160,
+        "wires": [
+            [
+                "4462a33f7f61a8af",
+                "b46ad586603fb343",
+                "8cf82aed407490d7"
+            ]
+        ]
+    },
+    {
+        "id": "4462a33f7f61a8af",
+        "type": "ui_text",
+        "z": "a7f76a515c8544a2",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Time Growing",
+        "format": "{{msg.payload.datetimestr}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1400,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "13a3876b97222a85",
+        "type": "inject",
+        "z": "a7f76a515c8544a2",
+        "name": "add PPFD Settings to msg",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"PPFD\":[100,250,300,500,650]}",
+        "payloadType": "json",
+        "x": 840,
+        "y": 100,
+        "wires": [
+            [
+                "9ff2529cf6ae6b72"
+            ]
+        ]
+    },
+    {
+        "id": "6db7930f04d5af6f",
+        "type": "debug",
+        "z": "a7f76a515c8544a2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1370,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "743f571852d81e95",
+        "type": "function",
+        "z": "a7f76a515c8544a2",
+        "name": "",
+        "func": "msg.payload = msg.payload.PPFD.week1\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1120,
+        "y": 60,
+        "wires": [
+            [
+                "6db7930f04d5af6f"
+            ]
+        ]
+    },
+    {
+        "id": "b46ad586603fb343",
+        "type": "debug",
+        "z": "a7f76a515c8544a2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1320,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ab74bfa7363017be",
+        "type": "inject",
+        "z": "a7f76a515c8544a2",
+        "name": "add PPFD Settings to msg",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"PPFD\":[100,250,300,500,650]}",
+        "payloadType": "json",
+        "x": 820,
+        "y": 640,
+        "wires": [
+            [
+                "ade35990ba74f235"
+            ]
+        ]
+    },
+    {
+        "id": "ade35990ba74f235",
+        "type": "debug",
+        "z": "a7f76a515c8544a2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "8cf82aed407490d7",
+        "type": "function",
+        "z": "a7f76a515c8544a2",
+        "name": "set payload to this week's PPFD value",
+        "func": "\nmsg.payload = msg.payload.PPFD[msg.payload.weeks-1];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 300,
+        "wires": [
+            [
+                "445585fdf9b627e3",
+                "e497d6aa719741b1"
+            ]
+        ]
+    },
+    {
+        "id": "445585fdf9b627e3",
+        "type": "debug",
+        "z": "a7f76a515c8544a2",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1370,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "e497d6aa719741b1",
+        "type": "ui_text",
+        "z": "a7f76a515c8544a2",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "PPFD Setpoint",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1410,
+        "y": 340,
         "wires": []
     },
     {
@@ -1379,49 +2064,6 @@
         "info": "Example of turning on and off a Sonoff S3 or S3 lite switch.",
         "x": 270,
         "y": 140,
-        "wires": []
-    },
-    {
-        "id": "9bc960db6bc612f2",
-        "type": "inject",
-        "z": "a7f76a515c8544a2",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "Light in ON",
-        "payload": "1023",
-        "payloadType": "str",
-        "x": 370,
-        "y": 220,
-        "wires": [
-            [
-                "9382c00b16624f7a"
-            ]
-        ]
-    },
-    {
-        "id": "9382c00b16624f7a",
-        "type": "e-mail",
-        "z": "a7f76a515c8544a2",
-        "server": "smtp.gmail.com",
-        "port": "465",
-        "secure": true,
-        "tls": true,
-        "name": "happyday.mjohnson@gmail.com",
-        "dname": "",
-        "x": 660,
-        "y": 240,
         "wires": []
     }
 ]
