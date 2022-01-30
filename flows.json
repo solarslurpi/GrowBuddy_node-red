@@ -10,7 +10,15 @@
     {
         "id": "a7f76a515c8544a2",
         "type": "tab",
-        "label": "SB UI flow",
+        "label": "SB UI Grafana flow",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e276300d7cbaa457",
+        "type": "tab",
+        "label": "SB UI Buddy Stuff Flow",
         "disabled": false,
         "info": "",
         "env": []
@@ -35,6 +43,9 @@
                 "wires": [
                     {
                         "id": "34247234f0668477"
+                    },
+                    {
+                        "id": "35956015b760807c"
                     }
                 ]
             }
@@ -373,6 +384,35 @@
         "height": 1
     },
     {
+        "id": "e16e06ca.f38438",
+        "type": "ui_group",
+        "name": "Frame Statistics",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "675036dd.603328",
+        "type": "ui_group",
+        "name": "Frame Grab",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "ac133c3c.7c708",
+        "type": "ui_group",
+        "z": "e276300d7cbaa457",
+        "name": "Default",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
         "id": "34247234f0668477",
         "type": "function",
         "z": "7f5b70e481620d6e",
@@ -607,6 +647,22 @@
         "active": true,
         "x": 460,
         "y": 40,
+        "wires": []
+    },
+    {
+        "id": "35956015b760807c",
+        "type": "debug",
+        "z": "7f5b70e481620d6e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 210,
+        "y": 220,
         "wires": []
     },
     {
@@ -1280,13 +1336,15 @@
         "id": "60d37fa549693ae8",
         "type": "debug",
         "z": "b2b2cf3fbcec5eed",
+        "d": true,
         "g": "dd5b4280471fc9a9",
         "name": "",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 460,
@@ -1495,24 +1553,6 @@
         ]
     },
     {
-        "id": "aad8703f8645dced",
-        "type": "config",
-        "z": "a7f76a515c8544a2",
-        "name": "",
-        "properties": [
-            {
-                "p": "date_offset",
-                "pt": "flow",
-                "to": "0",
-                "tot": "num"
-            }
-        ],
-        "active": true,
-        "x": 590,
-        "y": 300,
-        "wires": []
-    },
-    {
         "id": "4d9c0d995889eeec",
         "type": "change",
         "z": "a7f76a515c8544a2",
@@ -1651,189 +1691,6 @@
         ]
     },
     {
-        "id": "a14fd3ef2ef138ec",
-        "type": "ui_date_picker",
-        "z": "a7f76a515c8544a2",
-        "name": "",
-        "label": "Start Date:",
-        "group": "7a0c3262d7dd5dc0",
-        "order": 1,
-        "width": 2,
-        "height": 1,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "className": "",
-        "x": 340,
-        "y": 160,
-        "wires": [
-            [
-                "729d4600fbace227",
-                "1f6c0644360254c9"
-            ]
-        ]
-    },
-    {
-        "id": "729d4600fbace227",
-        "type": "debug",
-        "z": "a7f76a515c8544a2",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 550,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "1f6c0644360254c9",
-        "type": "change",
-        "z": "a7f76a515c8544a2",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "grow_start_date",
-                "pt": "flow",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 600,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9ff2529cf6ae6b72",
-        "type": "function",
-        "z": "a7f76a515c8544a2",
-        "name": "figure out weeks/days since start of grow",
-        "func": "\nvar oneDay = 1000*60*60*24;\n\n\nconsole.log(Math.floor((diff/oneDay)/7) + \" weeks, \" + Math.floor((diff/oneDay)%7) + \" days\")\nvar date_today = new Date();\nvar date_grow_start = new Date(flow.get(\"grow_start_date\")+1000);\n// To calculate the time difference of two dates\nvar diff = date_today.getTime() - date_grow_start.getTime();\nnode.warn(\"time diff: \" + diff)\n// To calculate the no. of days between two dates\nmsg.payload.weeks = Math.floor((diff/oneDay)/7)\nmsg.payload.datetimestr = msg.payload.weeks + \" weeks, \" + Math.floor((diff/oneDay)%7) + \" days\"\nnode.warn(Math.floor((diff/oneDay)/7) + \" weeks, \" + Math.floor((diff/oneDay)%7) + \" days\")\n\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1020,
-        "y": 160,
-        "wires": [
-            [
-                "4462a33f7f61a8af",
-                "b46ad586603fb343",
-                "8cf82aed407490d7"
-            ]
-        ]
-    },
-    {
-        "id": "4462a33f7f61a8af",
-        "type": "ui_text",
-        "z": "a7f76a515c8544a2",
-        "group": "7a0c3262d7dd5dc0",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Time Growing",
-        "format": "{{msg.payload.datetimestr}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 1400,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "13a3876b97222a85",
-        "type": "inject",
-        "z": "a7f76a515c8544a2",
-        "name": "add PPFD Settings to msg",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"PPFD\":[100,250,300,500,650]}",
-        "payloadType": "json",
-        "x": 840,
-        "y": 100,
-        "wires": [
-            [
-                "9ff2529cf6ae6b72"
-            ]
-        ]
-    },
-    {
-        "id": "6db7930f04d5af6f",
-        "type": "debug",
-        "z": "a7f76a515c8544a2",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1370,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "743f571852d81e95",
-        "type": "function",
-        "z": "a7f76a515c8544a2",
-        "name": "",
-        "func": "msg.payload = msg.payload.PPFD.week1\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1120,
-        "y": 60,
-        "wires": [
-            [
-                "6db7930f04d5af6f"
-            ]
-        ]
-    },
-    {
-        "id": "b46ad586603fb343",
-        "type": "debug",
-        "z": "a7f76a515c8544a2",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1320,
-        "y": 200,
-        "wires": []
-    },
-    {
         "id": "ab74bfa7363017be",
         "type": "inject",
         "z": "a7f76a515c8544a2",
@@ -1866,12 +1723,14 @@
         "id": "ade35990ba74f235",
         "type": "debug",
         "z": "a7f76a515c8544a2",
+        "d": true,
         "name": "",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 1030,
@@ -1879,45 +1738,116 @@
         "wires": []
     },
     {
-        "id": "8cf82aed407490d7",
+        "id": "9cd9bf5fb4272ccc",
+        "type": "config",
+        "z": "e276300d7cbaa457",
+        "d": true,
+        "name": "",
+        "properties": [
+            {
+                "p": "date_offset",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "active": true,
+        "x": 710,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "6cd204e8bf49a58c",
+        "type": "ui_date_picker",
+        "z": "e276300d7cbaa457",
+        "name": "",
+        "label": "Start Date:",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 1,
+        "width": 2,
+        "height": 1,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 490,
+        "y": 420,
+        "wires": [
+            [
+                "d464c762581695b0",
+                "22e85440c0f67164"
+            ]
+        ]
+    },
+    {
+        "id": "d382c68206a2053e",
+        "type": "ui_text",
+        "z": "e276300d7cbaa457",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Time Growing",
+        "format": "{{msg.payload.datetimestr}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 840,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "0abe4059e55ce07c",
+        "type": "inject",
+        "z": "e276300d7cbaa457",
+        "name": "add PPFD Settings to msg",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"PPFD\":[100,250,300,500,650]}",
+        "payloadType": "json",
+        "x": 280,
+        "y": 740,
+        "wires": [
+            [
+                "6d3c0fd9f0011a14"
+            ]
+        ]
+    },
+    {
+        "id": "6d3c0fd9f0011a14",
         "type": "function",
-        "z": "a7f76a515c8544a2",
+        "z": "e276300d7cbaa457",
         "name": "set payload to this week's PPFD value",
-        "func": "\nmsg.payload = msg.payload.PPFD[msg.payload.weeks-1];\nreturn msg;",
+        "func": "\nmsg.payload = msg.payload.PPFD[flow.get(\"weeks\")-1];\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1050,
-        "y": 300,
+        "x": 630,
+        "y": 740,
         "wires": [
             [
-                "445585fdf9b627e3",
-                "e497d6aa719741b1"
+                "340c4f220b6068d2"
             ]
         ]
     },
     {
-        "id": "445585fdf9b627e3",
-        "type": "debug",
-        "z": "a7f76a515c8544a2",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1370,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "e497d6aa719741b1",
+        "id": "340c4f220b6068d2",
         "type": "ui_text",
-        "z": "a7f76a515c8544a2",
+        "z": "e276300d7cbaa457",
         "group": "7a0c3262d7dd5dc0",
         "order": 3,
         "width": 0,
@@ -1927,8 +1857,502 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
+        "x": 940,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "5cfb8d7a44b7e879",
+        "type": "inject",
+        "z": "e276300d7cbaa457",
+        "name": "Add vpd settings to msg",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "vpd",
+        "payload": "{\t    \"vpd\": {\t        \"veg_min\":0.80,\t        \"veg_max\":0.95,\t        \"flower_min\":0.96,\t        \"flower_max\":1.15\t    }\t}",
+        "payloadType": "jsonata",
+        "x": 270,
+        "y": 840,
+        "wires": [
+            [
+                "5831e67647a86ff2"
+            ]
+        ]
+    },
+    {
+        "id": "ad1fd26f721c87fc",
+        "type": "inject",
+        "z": "e276300d7cbaa457",
+        "name": "send in flow.grow_start_date to datepicker",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "start_date",
+        "payload": "grow_start_date",
+        "payloadType": "flow",
+        "x": 220,
+        "y": 420,
+        "wires": [
+            [
+                "6cd204e8bf49a58c"
+            ]
+        ]
+    },
+    {
+        "id": "d4f2d9a5.a90858",
+        "type": "ui_template",
+        "z": "e276300d7cbaa457",
+        "d": true,
+        "group": "ac133c3c.7c708",
+        "name": "",
+        "order": 1,
+        "width": "",
+        "height": "",
+        "format": "<div>\n   <md-datepicker ng-model=\"myDate\" md-placeholder=\"Enter date\" ng-change=\"send({payload: myDate})\"></md-datepicker>\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1000,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9f0e3b83acc88407",
+        "type": "influxdb out",
+        "z": "e276300d7cbaa457",
+        "influxdb": "ab7d13904246734b",
+        "name": "insert grow start date",
+        "measurement": "config",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 960,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d464c762581695b0",
+        "type": "change",
+        "z": "e276300d7cbaa457",
+        "name": "set influx insert",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t   \"start_date\" : msg.payload,\t   \"time\": $flowContext(\"date_config_added\")\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 420,
+        "wires": [
+            [
+                "9f0e3b83acc88407"
+            ]
+        ]
+    },
+    {
+        "id": "fd15d2ea2e9cdc36",
+        "type": "influxdb in",
+        "z": "e276300d7cbaa457",
+        "influxdb": "ab7d13904246734b",
+        "name": "Get start_date entry from config table in influxdb.",
+        "query": "SELECT * from config",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 520,
+        "y": 320,
+        "wires": [
+            [
+                "a936166a8bead6f2"
+            ]
+        ]
+    },
+    {
+        "id": "284783931ebc6d6a",
+        "type": "inject",
+        "z": "e276300d7cbaa457",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 320,
+        "wires": [
+            [
+                "fd15d2ea2e9cdc36"
+            ]
+        ]
+    },
+    {
+        "id": "80b6edcdbd2471c0",
+        "type": "debug",
+        "z": "e276300d7cbaa457",
+        "name": "show flow values",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
         "x": 1410,
-        "y": 340,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "504cd824a0c89f12",
+        "type": "change",
+        "z": "e276300d7cbaa457",
+        "name": "set flow.grow_start_date and flow.date_config_added",
+        "rules": [
+            {
+                "t": "set",
+                "p": "grow_start_date",
+                "pt": "flow",
+                "to": "payload[0].start_date",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "date_config_added",
+                "pt": "flow",
+                "to": "payload[0].time",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t    \"start_date\":$flowContext(\"grow_start_date\"),\t    \"time\":$flowContext(\"date_config_added\")\t}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 300,
+        "wires": [
+            [
+                "80b6edcdbd2471c0"
+            ]
+        ]
+    },
+    {
+        "id": "386d14dca405cbc3",
+        "type": "comment",
+        "z": "e276300d7cbaa457",
+        "name": "Get the grow_start_date from influx and store in flow.grow_start_date",
+        "info": "",
+        "x": 540,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "153701809f87fc0f",
+        "type": "comment",
+        "z": "e276300d7cbaa457",
+        "name": "Set up the start date UI. Update flow.grow_start_date and config table in influxdb if another start date is chosen.",
+        "info": "",
+        "x": 670,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "a936166a8bead6f2",
+        "type": "switch",
+        "z": "e276300d7cbaa457",
+        "name": "",
+        "property": "payload.length",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 790,
+        "y": 320,
+        "wires": [
+            [
+                "504cd824a0c89f12"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "22e85440c0f67164",
+        "type": "change",
+        "z": "e276300d7cbaa457",
+        "name": "set flow.grow_date_start",
+        "rules": [
+            {
+                "t": "set",
+                "p": "grow_start_date",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "118fc95ef4b75ff1",
+        "type": "comment",
+        "z": "e276300d7cbaa457",
+        "name": "Figure out the number of weeks/days have passed since flow.grow_start_date",
+        "info": "",
+        "x": 570,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "3b3a6ac8f5c1ce19",
+        "type": "inject",
+        "z": "e276300d7cbaa457",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 580,
+        "wires": [
+            [
+                "e31c34c23ffe518b"
+            ]
+        ]
+    },
+    {
+        "id": "e31c34c23ffe518b",
+        "type": "function",
+        "z": "e276300d7cbaa457",
+        "name": "figure out weeks/days since start of grow",
+        "func": "\nvar oneDay = 1000*60*60*24;\n\n\nconsole.log(Math.floor((diff/oneDay)/7) + \" weeks, \" + Math.floor((diff/oneDay)%7) + \" days\")\nvar date_today = new Date();\nvar date_grow_start = new Date(flow.get(\"grow_start_date\")+1000);\n// To calculate the time difference of two dates\nvar diff = date_today.getTime() - date_grow_start.getTime();\nnode.warn(\"time diff: \" + diff);\n// To calculate the no. of days between two dates\nmsg.payload = {\n    \"weeks\": Math.floor((diff/oneDay)/7),\n    \"days\" : Math.floor((diff/oneDay)%7),\n    \"datetimestr\": Math.floor((diff/oneDay)/7) + \" weeks, \" + Math.floor((diff/oneDay)%7) + \" days\"\n}\n\nnode.warn(Math.floor((diff/oneDay)/7) + \" weeks, \" + Math.floor((diff/oneDay)%7) + \" days\")\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 580,
+        "wires": [
+            [
+                "c4c97650370840c8",
+                "d382c68206a2053e"
+            ]
+        ]
+    },
+    {
+        "id": "c4c97650370840c8",
+        "type": "change",
+        "z": "e276300d7cbaa457",
+        "name": "set flow.weeks, flow.days,flow.growth_stage",
+        "rules": [
+            {
+                "t": "set",
+                "p": "weeks",
+                "pt": "flow",
+                "to": "payload.weeks",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "days",
+                "pt": "flow",
+                "to": "payload.days",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t    \"weeks\":$flowContext(\"weeks\"),\t    \"days\":$flowContext(\"days\"),\t    \"growth_stage\":$flowContext(\"growth_stage\")\t}",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "growth_stage",
+                "pt": "flow",
+                "to": "(\tpayload.weeks < 3 ? \"baby\" : payload.weeks < 9 ? \"veg\" : \"flower\";\t)",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 580,
+        "wires": [
+            [
+                "ef6f5d14aa8d0abb",
+                "23cd491833e7aa2f"
+            ]
+        ]
+    },
+    {
+        "id": "ef6f5d14aa8d0abb",
+        "type": "debug",
+        "z": "e276300d7cbaa457",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "c833e3acfc263e2b",
+        "type": "comment",
+        "z": "e276300d7cbaa457",
+        "name": "Add PPFD and vpd recommendations",
+        "info": "",
+        "x": 450,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "f2f31efacf7ce175",
+        "type": "comment",
+        "z": "e276300d7cbaa457",
+        "name": "Set the growth stage to be either baby, veg, or flower.",
+        "info": "",
+        "x": 1280,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "23cd491833e7aa2f",
+        "type": "ui_text",
+        "z": "e276300d7cbaa457",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Growth Stage",
+        "format": "{{msg.payload.growth_stage}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 1240,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "5831e67647a86ff2",
+        "type": "function",
+        "z": "e276300d7cbaa457",
+        "name": "Figure out \"best\" VPD range.",
+        "func": "if (flow.get(\"growth_stage\") != \"flower\") {\n    vpd_min = msg.payload.vpd.veg_min;\n    vpd_max = msg.payload.vpd.veg_max;\n}else {\n    vpd_min = msg.payload.vpd.flower_min;\n    vpd_max = msg.payload.vpd.flower_max; \n}\nmsg.payload = \"min: \" + vpd_min + \" max: \" + vpd_max;\nnode.warn(vpd_min);\nnode.warn(vpd_max);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 840,
+        "wires": [
+            [
+                "1fc59d5e8568ee86"
+            ]
+        ]
+    },
+    {
+        "id": "1fc59d5e8568ee86",
+        "type": "ui_text",
+        "z": "e276300d7cbaa457",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Ideal VPD Range",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "x": 870,
+        "y": 840,
         "wires": []
     },
     {
