@@ -34,7 +34,7 @@
     {
         "id": "e9f57d902aeecba9",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "PAR Buddy",
         "disabled": false,
         "info": "",
         "env": []
@@ -385,15 +385,7 @@
         "width": "6"
     },
     {
-        "id": "50870d74a152a176",
-        "type": "ui_link",
-        "name": "Link 2",
-        "icon": "open_in_browser",
-        "target": "newtab",
-        "order": 2
-    },
-    {
-        "id": "b7095e4d712f7c4c",
+        "id": "70c558b5876c9dea",
         "type": "ui_spacer",
         "z": "e276300d7cbaa457",
         "name": "spacer",
@@ -403,27 +395,27 @@
         "height": 1
     },
     {
-        "id": "9838bf3466680a8c",
+        "id": "d65ab3ad17afcf27",
         "type": "ui_spacer",
         "z": "e276300d7cbaa457",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 4,
-        "width": 11,
+        "width": 1,
         "height": 1
     },
     {
-        "id": "993c62ca9917c5dd",
+        "id": "9a4f5b0043f0d2e1",
         "type": "ui_spacer",
         "z": "e276300d7cbaa457",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 6,
-        "width": 1,
+        "width": 3,
         "height": 1
     },
     {
-        "id": "aa71a31c734a5030",
+        "id": "60fc8035748f2b0f",
         "type": "ui_spacer",
         "z": "e276300d7cbaa457",
         "name": "spacer",
@@ -433,7 +425,7 @@
         "height": 1
     },
     {
-        "id": "fac8a8b2c0acf55c",
+        "id": "4ed33c6305756eb3",
         "type": "ui_spacer",
         "z": "e276300d7cbaa457",
         "name": "spacer",
@@ -443,7 +435,7 @@
         "height": 1
     },
     {
-        "id": "665e9ace290bbc38",
+        "id": "f9be05f7d5d712ac",
         "type": "ui_spacer",
         "z": "e276300d7cbaa457",
         "name": "spacer",
@@ -453,7 +445,67 @@
         "height": 1
     },
     {
-        "id": "769acffd99168450",
+        "id": "b31e915f275bbba3",
+        "type": "ui_spacer",
+        "z": "e276300d7cbaa457",
+        "name": "spacer",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8b8ea16e7c4e73f6",
+        "type": "ui_spacer",
+        "z": "e276300d7cbaa457",
+        "name": "spacer",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 16,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "79c5bdd0e85986ec",
+        "type": "ui_spacer",
+        "z": "e276300d7cbaa457",
+        "name": "spacer",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 17,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "4280fcd7c5f383f1",
+        "type": "ui_spacer",
+        "z": "e276300d7cbaa457",
+        "name": "spacer",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 18,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "26794a2749bab50b",
+        "type": "ui_spacer",
+        "z": "e276300d7cbaa457",
+        "name": "spacer",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "19d959f1901d33f6",
+        "type": "ui_spacer",
+        "z": "e276300d7cbaa457",
+        "name": "spacer",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 20,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "562e625f6e5c8c80",
         "type": "ui_spacer",
         "z": "e276300d7cbaa457",
         "name": "spacer",
@@ -463,7 +515,7 @@
         "height": 1
     },
     {
-        "id": "64f44eed61ceed93",
+        "id": "ae83371c5ad79fa8",
         "type": "ui_spacer",
         "z": "e276300d7cbaa457",
         "name": "spacer",
@@ -473,7 +525,7 @@
         "height": 1
     },
     {
-        "id": "ef349526ae315b5f",
+        "id": "ae5f31cda9b59ec0",
         "type": "ui_spacer",
         "z": "e276300d7cbaa457",
         "name": "spacer",
@@ -483,7 +535,7 @@
         "height": 1
     },
     {
-        "id": "eaf3df6d784d2486",
+        "id": "b19cde5eab721be2",
         "type": "ui_spacer",
         "z": "e276300d7cbaa457",
         "name": "spacer",
@@ -493,7 +545,7 @@
         "height": 1
     },
     {
-        "id": "2553731ab64672ad",
+        "id": "92c0b023ff7b184e",
         "type": "ui_spacer",
         "z": "e276300d7cbaa457",
         "name": "spacer",
@@ -1090,14 +1142,14 @@
             {
                 "t": "set",
                 "p": "Humidity",
-                "pt": "flow",
+                "pt": "global",
                 "to": "payload.SCD30.Humidity",
                 "tot": "msg"
             },
             {
                 "t": "set",
                 "p": "Temperature",
-                "pt": "flow",
+                "pt": "global",
                 "to": "payload.SCD30.Temperature",
                 "tot": "msg"
             },
@@ -1476,20 +1528,6 @@
         ]
     },
     {
-        "id": "b86713b9963a29c4",
-        "type": "ui_ui_control",
-        "z": "a7f76a515c8544a2",
-        "name": "Page loads",
-        "events": "connect",
-        "x": 570,
-        "y": 500,
-        "wires": [
-            [
-                "a4654193.3b49e8"
-            ]
-        ]
-    },
-    {
         "id": "a82f23f8e4fcc4ed",
         "type": "ui_button",
         "z": "a7f76a515c8544a2",
@@ -1805,7 +1843,7 @@
         "type": "ui_text",
         "z": "e276300d7cbaa457",
         "group": "7a0c3262d7dd5dc0",
-        "order": 5,
+        "order": 3,
         "width": 3,
         "height": 1,
         "name": "",
@@ -1841,7 +1879,7 @@
         "type": "ui_text",
         "z": "e276300d7cbaa457",
         "group": "7a0c3262d7dd5dc0",
-        "order": 7,
+        "order": 9,
         "width": 3,
         "height": 1,
         "name": "",
@@ -1867,15 +1905,15 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "60",
         "crontab": "",
         "once": true,
         "onceDelay": 0.1,
         "topic": "vpd",
         "payload": "{\t    \"vpd\": {\t        \"veg_min\":0.80,\t        \"veg_max\":0.95,\t        \"flower_min\":0.96,\t        \"flower_max\":1.15\t    }\t}",
         "payloadType": "jsonata",
-        "x": 270,
-        "y": 840,
+        "x": 290,
+        "y": 820,
         "wires": [
             [
                 "5831e67647a86ff2"
@@ -2177,8 +2215,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
-        "y": 580,
+        "x": 480,
+        "y": 600,
         "wires": [
             [
                 "d382c68206a2053e",
@@ -2212,7 +2250,7 @@
         "type": "ui_text",
         "z": "e276300d7cbaa457",
         "group": "7a0c3262d7dd5dc0",
-        "order": 9,
+        "order": 5,
         "width": 3,
         "height": 1,
         "name": "",
@@ -2229,7 +2267,7 @@
         "type": "function",
         "z": "e276300d7cbaa457",
         "name": "Figure out \"best\" VPD range.",
-        "func": "if (flow.get(\"growth_stage\") != \"flower\") {\n    global.set(\"vpd_min\",msg.payload.vpd.veg_min);\n    global.set(\"vpd_max\",msg.payload.vpd.veg_max);\n\n}else {\n    global.set(\"vpd_min\",msg.payload.vpd.flower_min);\n    global.set(\"vpd_max\",msg.payload.vpd.flower_max);\n}\nmsg.payload = \"min: \" + global.get(\"vpd_min\") + \" max: \" + global.get(\"vpd_max\");\n//node.warn(global.get(\"vpd_min\"));\n//node.warn(global.get(\"vpd_max\"));\nreturn msg;",
+        "func": "if (flow.get(\"growth_stage\") != \"flower\") {\n    global.set(\"vpd_min\",msg.payload.vpd.veg_min);\n    global.set(\"vpd_max\",msg.payload.vpd.veg_max);\n\n}else {\n    global.set(\"vpd_min\",msg.payload.vpd.flower_min);\n    global.set(\"vpd_max\",msg.payload.vpd.flower_max);\n}\nmsg.payload = \"min: \" + global.get(\"vpd_min\") + \" max: \" + global.get(\"vpd_max\");\n//node.warn(global.get(\"vpd_min\"));\n//node.warn(global.get(\"vpd_max\"));\nvar min = global.get('vpd_min') || 0;\nvar max = global.get('vpd_max') || 100;\nvar data = global.get(\"vpd\")\nmsg = {payload:data,ui_control:{min:min,max:max},topic:\"vpd\"};\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2239,26 +2277,9 @@
         "y": 820,
         "wires": [
             [
-                "1fc59d5e8568ee86"
+                "4b5eb0901fd0bb75"
             ]
         ]
-    },
-    {
-        "id": "1fc59d5e8568ee86",
-        "type": "ui_text",
-        "z": "e276300d7cbaa457",
-        "group": "7a0c3262d7dd5dc0",
-        "order": 11,
-        "width": 3,
-        "height": 1,
-        "name": "",
-        "label": "Ideal VPD Range",
-        "format": "{{msg.payload}}",
-        "layout": "col-center",
-        "className": "",
-        "x": 870,
-        "y": 840,
-        "wires": []
     },
     {
         "id": "68e23c239f174f7d",
@@ -2276,12 +2297,11 @@
         ],
         "repeat": "",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
         "payloadType": "date",
-        "x": 130,
+        "x": 140,
         "y": 560,
         "wires": [
             [
@@ -2324,7 +2344,7 @@
         "label": "Maintanence Mode",
         "tooltip": "",
         "group": "7a0c3262d7dd5dc0",
-        "order": 3,
+        "order": 7,
         "width": 2,
         "height": 1,
         "passthru": true,
@@ -2413,6 +2433,193 @@
         "x": 610,
         "y": 100,
         "wires": []
+    },
+    {
+        "id": "4b5eb0901fd0bb75",
+        "type": "ui_gauge",
+        "z": "e276300d7cbaa457",
+        "name": "",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 11,
+        "width": 3,
+        "height": 2,
+        "gtype": "gage",
+        "title": "vpd",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "0.80",
+        "max": "0.95",
+        "colors": [
+            "#fffff5",
+            "#00e67a",
+            "#cb8e48"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 810,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "f1f3082e33d2de95",
+        "type": "comment",
+        "z": "e276300d7cbaa457",
+        "name": "Note: Updating in influx means keeping all entries in the row the same except the entry to change.",
+        "info": "",
+        "x": 1070,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "b4c672f23eb8ae4a",
+        "type": "inject",
+        "z": "e276300d7cbaa457",
+        "name": "Add Temperature settings to msg",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\t   \"temperature\": {\t       \"baby_min_day\":68,\t       \"baby_max_day\":72,\t       \"baby_min_night\":68,\t       \"baby_max_night\":72,\t       \"veg_min_day\":74,\t       \"veg_max_day\":84,\t       \"veg_min_night\":68,\t       \"veg_max_night\":76,\t       \"flower_min_day\":68,\t       \"flower_max_day\":84,\t       \"flower_min_night\":68,\t       \"flower_max_night\":78\t    }\t}",
+        "payloadType": "jsonata",
+        "x": 280,
+        "y": 880,
+        "wires": [
+            [
+                "ba4c14d575f6e2da"
+            ]
+        ]
+    },
+    {
+        "id": "ba4c14d575f6e2da",
+        "type": "function",
+        "z": "e276300d7cbaa457",
+        "name": "figure out \"best\" Temperature range.",
+        "func": "if (flow.get(\"growth_stage\") == \"baby\") {\n    if (global.get(\"Light_ON\") ){\n        global.set(\"temperature_min\",msg.payload.temperature.baby_min_day);\n        global.set(\"temperature_max\",msg.payload.temperature.baby_max_day);\n    }else {\n        global.set(\"temperature_min\",msg.payload.temperature.baby_min_night);\n        global.set(\"temperature_max\",msg.payload.temperature.baby_max_night);\n    }\n}\nif (flow.get(\"growth_stage\") == \"veg\") {\n    if (global.get(\"Light_ON\") ){\n        global.set(\"temperature_min\",msg.payload.temperature.veg_min_day);\n        global.set(\"temperature_max\",msg.payload.temperature.veg_max_day);\n    }else {\n        global.set(\"temperature_min\",msg.payload.temperature.veg_min_night);\n        global.set(\"temperature_max\",msg.payload.temperature.veg_max_night);\n    }\n}\nif (flow.get(\"growth_stage\") == \"flower\") {\n    if (global.get(\"Light_ON\") ){\n        global.set(\"temperature_min\",msg.payload.temperature.flower_min_day);\n        global.set(\"temperature_max\",msg.payload.temperature.flower_max_day);\n    }else {\n        global.set(\"temperature_min\",msg.payload.temperature.flower_min_night);\n        global.set(\"temperature_max\",msg.payload.temperature.flower_max_night);\n    }\n}\n\nmsg.payload = \"min: \" + global.get(\"temperature_min\") + \" max: \" + global.get(\"temperature_max\");\n//node.warn(global.get(\"temperature_min\"));\n//node.warn(global.get(\"temperature_max\"));\n//node.warn(global.get(\"Temperature\"));\nvar min = global.get('temperature_min') || 0;\nvar max = global.get('temperature_max') || 100;\nvar data = global.get(\"Temperature\");\nmsg = {payload:data,ui_control:{min:min,max:max},topic:\"temperature\"};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 880,
+        "wires": [
+            [
+                "514ce573410ef9f0"
+            ]
+        ]
+    },
+    {
+        "id": "514ce573410ef9f0",
+        "type": "ui_gauge",
+        "z": "e276300d7cbaa457",
+        "name": "",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 13,
+        "width": 3,
+        "height": 2,
+        "gtype": "gage",
+        "title": "temperature",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "0.80",
+        "max": "0.95",
+        "colors": [
+            "#fffff5",
+            "#00e67a",
+            "#cb5548"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 950,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "e129b558952bdd52",
+        "type": "inject",
+        "z": "e276300d7cbaa457",
+        "name": "Add Humidity Gauge",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\t   \"humidity\": {\t       \"baby_min\":50,\t       \"baby_max\":90,\t       \"veg_min\":55,\t       \"veg_max\":75,\t       \"flower_min\":50,\t       \"flower_max\":60\t    }\t}",
+        "payloadType": "jsonata",
+        "x": 240,
+        "y": 940,
+        "wires": [
+            [
+                "48334c6f7796479c"
+            ]
+        ]
+    },
+    {
+        "id": "ba8d95338627b104",
+        "type": "ui_gauge",
+        "z": "e276300d7cbaa457",
+        "name": "",
+        "group": "7a0c3262d7dd5dc0",
+        "order": 15,
+        "width": 3,
+        "height": 2,
+        "gtype": "gage",
+        "title": "humidity",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "25",
+        "max": "65",
+        "colors": [
+            "#fffff5",
+            "#00e67a",
+            "#d0d76a"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 840,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "48334c6f7796479c",
+        "type": "function",
+        "z": "e276300d7cbaa457",
+        "name": "figure out \"best\" Temperature range.",
+        "func": "if (flow.get(\"growth_stage\") == \"baby\") {\n        global.set(\"humidity_min\",msg.payload.humidity.baby_min);\n        global.set(\"humidity_max\",msg.payload.humidity.baby_max);\n}\nif (flow.get(\"growth_stage\") == \"veg\") {\n        global.set(\"humidity_min\",msg.payload.humidity.veg_min);\n        global.set(\"humidity_max\",msg.payload.humidity.veg_max);\n}\nif (flow.get(\"growth_stage\") == \"flower\") {\n        global.set(\"humidity_min\",msg.payload.humidity.flower_min);\n        global.set(\"humidity_max\",msg.payload.humidity.flower_max);\n}\nmin = global.get(\"humidity_min\");\nmax = global.get(\"humidity_max\");\nmsg.payload = \"min: \" + min + \" max: \" + max;\nnode.warn(min);\nnode.warn(max);\nnode.warn(global.get(\"Humidity\"));\nvar data = global.get(\"Humidity\");\nmsg = {payload:data,ui_control:{min:min,max:max},topic:\"humidity\"};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 940,
+        "wires": [
+            [
+                "ba8d95338627b104"
+            ]
+        ]
     },
     {
         "id": "3e1ad74ac9731f9a",
@@ -2956,14 +3163,14 @@
         "id": "8b099ea029f77864",
         "type": "change",
         "z": "1163bcff9c10da0f",
-        "name": "payload = start pump",
+        "name": "payload = start pump (1)",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "Start Pump",
-                "tot": "str"
+                "to": "1",
+                "tot": "num"
             }
         ],
         "action": "",
@@ -2971,11 +3178,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 940,
+        "x": 950,
         "y": 660,
         "wires": [
             [
-                "fe79fee09f523b89"
+                "fe79fee09f523b89",
+                "edf5ec0e391a2805"
             ]
         ]
     },
@@ -2999,14 +3207,14 @@
         "id": "f578f6a91c8b9fd2",
         "type": "change",
         "z": "1163bcff9c10da0f",
-        "name": "payload = stop pump",
+        "name": "payload = stop pump (0)",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "Stop Pump",
-                "tot": "str"
+                "to": "0",
+                "tot": "num"
             }
         ],
         "action": "",
@@ -3014,11 +3222,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 940,
+        "x": 950,
         "y": 720,
         "wires": [
             [
-                "fe79fee09f523b89"
+                "fe79fee09f523b89",
+                "edf5ec0e391a2805"
             ]
         ]
     },
@@ -3036,6 +3245,137 @@
         "statusType": "auto",
         "x": 700,
         "y": 660,
+        "wires": []
+    },
+    {
+        "id": "edf5ec0e391a2805",
+        "type": "influxdb out",
+        "z": "1163bcff9c10da0f",
+        "influxdb": "ab7d13904246734b",
+        "name": "fillerup_pump on/off readings to influxdb",
+        "measurement": "fillerup_pump",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 1300,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "90749f75e0cef4da",
+        "type": "mqtt in",
+        "z": "e9f57d902aeecba9",
+        "name": "",
+        "topic": "PAR/READING",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "77fed1c377eed3df",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 160,
+        "wires": [
+            [
+                "e32f6cc1541a9fbd"
+            ]
+        ]
+    },
+    {
+        "id": "b84080d003502288",
+        "type": "debug",
+        "z": "e9f57d902aeecba9",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "e32f6cc1541a9fbd",
+        "type": "json",
+        "z": "e9f57d902aeecba9",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 430,
+        "y": 160,
+        "wires": [
+            [
+                "e8bae33d11d80985"
+            ]
+        ]
+    },
+    {
+        "id": "e8bae33d11d80985",
+        "type": "csv",
+        "z": "e9f57d902aeecba9",
+        "name": "",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "ch1,ch2,ch3,ch4,ch5,ch6,ch7,ch8",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 600,
+        "y": 160,
+        "wires": [
+            [
+                "b84080d003502288",
+                "3b4e8a43a6673b15"
+            ]
+        ]
+    },
+    {
+        "id": "3b4e8a43a6673b15",
+        "type": "file",
+        "z": "e9f57d902aeecba9",
+        "name": "as7341 readings stored in csv",
+        "filename": "/home/pi/PAR_BUDDY/as7341_readings.csv",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 790,
+        "y": 240,
+        "wires": [
+            [
+                "05d1c8191ae846a4"
+            ]
+        ]
+    },
+    {
+        "id": "05d1c8191ae846a4",
+        "type": "mqtt out",
+        "z": "e9f57d902aeecba9",
+        "name": "",
+        "topic": "PAR/READING/OK",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "77fed1c377eed3df",
+        "x": 1070,
+        "y": 240,
         "wires": []
     },
     {
