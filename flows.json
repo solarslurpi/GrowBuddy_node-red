@@ -47,6 +47,22 @@
         "info": ""
     },
     {
+        "id": "80e2328c091f49c9",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9ae175b32b26f367",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "7f5b70e481620d6e",
         "type": "subflow",
         "name": "SB - Error Check",
@@ -164,6 +180,32 @@
         ],
         "x": 174,
         "y": 419
+    },
+    {
+        "id": "c319afa4.557968",
+        "type": "group",
+        "z": "9ae175b32b26f367",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "14ce4cc6.d66e1b",
+            "130b08c0.946dff",
+            "a0cd749f.8635c8",
+            "ab9a436b.1dbad8",
+            "7ac12a79.c2e98c",
+            "3f58c8f3.cdbed",
+            "dd4ec3f6.31e2a",
+            "cb47b44.cab4c48"
+        ],
+        "x": 129.66668701171875,
+        "y": 362.00001335144043
     },
     {
         "id": "77fed1c377eed3df",
@@ -385,9 +427,20 @@
         "width": "6"
     },
     {
-        "id": "70c558b5876c9dea",
+        "id": "1f16ea14e7cf23c6",
+        "type": "ui_group",
+        "name": "Web cam",
+        "tab": "1ff97cd4.681d5b",
+        "order": 3,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1c55f86af6093688",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 2,
@@ -395,9 +448,9 @@
         "height": 1
     },
     {
-        "id": "d65ab3ad17afcf27",
+        "id": "af78efd7df6d6c47",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 4,
@@ -405,9 +458,9 @@
         "height": 1
     },
     {
-        "id": "9a4f5b0043f0d2e1",
+        "id": "04826e21fb754e9f",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 6,
@@ -415,9 +468,9 @@
         "height": 1
     },
     {
-        "id": "60fc8035748f2b0f",
+        "id": "02747195595bb7f0",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 8,
@@ -425,9 +478,9 @@
         "height": 1
     },
     {
-        "id": "4ed33c6305756eb3",
+        "id": "8166046b3f139aa8",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 10,
@@ -435,9 +488,9 @@
         "height": 1
     },
     {
-        "id": "f9be05f7d5d712ac",
+        "id": "9a5481d182a27436",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 12,
@@ -445,9 +498,9 @@
         "height": 1
     },
     {
-        "id": "b31e915f275bbba3",
+        "id": "3c82ca3d080f2e03",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 14,
@@ -455,9 +508,9 @@
         "height": 1
     },
     {
-        "id": "8b8ea16e7c4e73f6",
+        "id": "5c118483eb1485c1",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 16,
@@ -465,9 +518,9 @@
         "height": 1
     },
     {
-        "id": "79c5bdd0e85986ec",
+        "id": "791cefac6d20a24c",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 17,
@@ -475,9 +528,9 @@
         "height": 1
     },
     {
-        "id": "4280fcd7c5f383f1",
+        "id": "20bcf82485fcc87d",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 18,
@@ -485,9 +538,9 @@
         "height": 1
     },
     {
-        "id": "26794a2749bab50b",
+        "id": "4bcba760d28d5734",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 19,
@@ -495,9 +548,9 @@
         "height": 1
     },
     {
-        "id": "19d959f1901d33f6",
+        "id": "c971e938531b1950",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "7a0c3262d7dd5dc0",
         "order": 20,
@@ -505,9 +558,9 @@
         "height": 1
     },
     {
-        "id": "562e625f6e5c8c80",
+        "id": "0d046e25ece278a7",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "bbc3532f.41ca7",
         "order": 1,
@@ -515,9 +568,9 @@
         "height": 1
     },
     {
-        "id": "ae83371c5ad79fa8",
+        "id": "3579ac0111768862",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "bbc3532f.41ca7",
         "order": 3,
@@ -525,9 +578,9 @@
         "height": 1
     },
     {
-        "id": "ae5f31cda9b59ec0",
+        "id": "34613f6d1d6ec150",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "bbc3532f.41ca7",
         "order": 5,
@@ -535,9 +588,9 @@
         "height": 1
     },
     {
-        "id": "b19cde5eab721be2",
+        "id": "be7d67c8c86285fb",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "bbc3532f.41ca7",
         "order": 7,
@@ -545,9 +598,9 @@
         "height": 1
     },
     {
-        "id": "92c0b023ff7b184e",
+        "id": "a5e580242c1ff193",
         "type": "ui_spacer",
-        "z": "e276300d7cbaa457",
+        "z": "80e2328c091f49c9",
         "name": "spacer",
         "group": "bbc3532f.41ca7",
         "order": 9,
@@ -2031,7 +2084,8 @@
         "y": 320,
         "wires": [
             [
-                "a936166a8bead6f2"
+                "a936166a8bead6f2",
+                "80b6edcdbd2471c0"
             ]
         ]
     },
@@ -2046,8 +2100,8 @@
             }
         ],
         "repeat": "",
-        "crontab": "",
-        "once": true,
+        "crontab": "01 00 * * *",
+        "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payloadType": "date",
@@ -2209,7 +2263,7 @@
         "type": "function",
         "z": "e276300d7cbaa457",
         "name": "figure out weeks/days since start of grow",
-        "func": "\nvar oneDay = 1000*60*60*24;\n\n\n\nvar date_today = new Date();\nvar date_grow_start = new Date(flow.get(\"grow_start_date\")+1000);\n// To calculate the time difference of two dates\nvar diff = date_today.getTime() - date_grow_start.getTime();\n//node.warn(\"time diff: \" + diff);\n// To calculate the no. of days between two dates\nflow.set(\"weeks\",Math.floor((diff/oneDay)/7));\nflow.set(\"days\", Math.floor((diff/oneDay)%7));\nflow.set(\"growth_stage\",flow.get(\"weeks\") < 4 ? \"baby\" : flow.get(\"weeks\")  < 9 ? \"veg\" : \"flower\");\n\n//node.warn(\"Growth stage is \"+flow.get(\"growth_stage\"))\nmsg.payload = Math.floor((diff/oneDay)/7) + \" weeks, \" + Math.floor((diff/oneDay)%7) + \" days\";\n\n\n//node.warn(Math.floor((diff/oneDay)/7) + \" weeks, \" + Math.floor((diff/oneDay)%7) + \" days\")\n\n\nreturn msg;",
+        "func": "\nvar oneDay = 1000*60*60*24;\n\n\n\nvar date_today = new Date();\nvar date_grow_start = new Date(flow.get(\"grow_start_date\")+1000);\n// To calculate the time difference of two dates\nvar diff = date_today.getTime() - date_grow_start.getTime();\nnode.warn(\"time diff: \" + diff);\n// To calculate the no. of days between two dates\nflow.set(\"weeks\",Math.floor((diff/oneDay)/7));\nflow.set(\"days\", Math.round((diff/oneDay)%7));\nflow.set(\"growth_stage\",flow.get(\"weeks\") < 4 ? \"baby\" : flow.get(\"weeks\")  < 9 ? \"veg\" : \"flower\");\n\n//node.warn(\"Growth stage is \"+flow.get(\"growth_stage\"))\nmsg.payload = flow.get(\"weeks\") + \" weeks, \" + flow.get(\"days\") + \" days\";\n\nnode.warn(flow.get(\"weeks\") + \" weeks, \" + flow.get(\"days\") + \" days\")\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2278,34 +2332,6 @@
         "wires": [
             [
                 "4b5eb0901fd0bb75"
-            ]
-        ]
-    },
-    {
-        "id": "68e23c239f174f7d",
-        "type": "inject",
-        "z": "e276300d7cbaa457",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 560,
-        "wires": [
-            [
-                "e31c34c23ffe518b"
             ]
         ]
     },
@@ -2618,6 +2644,62 @@
         "wires": [
             [
                 "ba8d95338627b104"
+            ]
+        ]
+    },
+    {
+        "id": "766ae31041bcf5c9",
+        "type": "inject",
+        "z": "e276300d7cbaa457",
+        "name": "Update daily",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "01 00 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 180,
+        "y": 600,
+        "wires": [
+            [
+                "e31c34c23ffe518b"
+            ]
+        ]
+    },
+    {
+        "id": "94ec2054722aa0eb",
+        "type": "inject",
+        "z": "e276300d7cbaa457",
+        "name": "update when flow is updated",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 660,
+        "wires": [
+            [
+                "e31c34c23ffe518b"
             ]
         ]
     },
@@ -3514,5 +3596,199 @@
         "x": 270,
         "y": 140,
         "wires": []
+    },
+    {
+        "id": "6f03da4f17d90efd",
+        "type": "ui_template",
+        "z": "80e2328c091f49c9",
+        "group": "1f16ea14e7cf23c6",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"margin-bottom: 10px;\">\n<img src=\"http://192.168.86.46/\" width=\"400px\" height=\"350\">\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 890,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14ce4cc6.d66e1b",
+        "type": "ui_ui_control",
+        "z": "9ae175b32b26f367",
+        "g": "c319afa4.557968",
+        "name": "Startup",
+        "events": "connect",
+        "x": 460,
+        "y": 460,
+        "wires": [
+            [
+                "3f58c8f3.cdbed"
+            ]
+        ]
+    },
+    {
+        "id": "130b08c0.946dff",
+        "type": "link out",
+        "z": "9ae175b32b26f367",
+        "g": "c319afa4.557968",
+        "name": "Dashboard Startup - Out",
+        "links": [
+            "2b3b452f.1dac22",
+            "411c1b85.f50ec4",
+            "480b0328.37263c",
+            "4ef418da.8ab538",
+            "c07805cd.355d4",
+            "c41552b6.8571a",
+            "c64a8499.028398",
+            "d294caea.d30598",
+            "f72fda03.2de5e8",
+            "95c28f77.44567",
+            "57d384c3.4321e4",
+            "11d3a079.a43b28",
+            "a7c22f20.f7faa",
+            "df3da41b.01b6c",
+            "17be7d99.8c0312",
+            "acfe7184.9dee58",
+            "a38b5895.f8c6a8",
+            "ae0a9fb7.a3c5c8"
+        ],
+        "x": 921.6665649414062,
+        "y": 408.9999828338623,
+        "wires": [],
+        "l": true
+    },
+    {
+        "id": "a0cd749f.8635c8",
+        "type": "comment",
+        "z": "9ae175b32b26f367",
+        "g": "c319afa4.557968",
+        "name": "Change log",
+        "info": "2021-03-24: Created to replace individual statup ui_control nodes for each tab\n2021-04-17: Added logic to refresh current tab on \"change\" tab event, pull data only on \"connect\" event.",
+        "x": 248.66668701171875,
+        "y": 531.3333721160889,
+        "wires": []
+    },
+    {
+        "id": "ab9a436b.1dbad8",
+        "type": "inject",
+        "z": "9ae175b32b26f367",
+        "g": "c319afa4.557968",
+        "name": "Manual Startup",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 259.66668701171875,
+        "y": 460.3333740234375,
+        "wires": [
+            [
+                "14ce4cc6.d66e1b"
+            ]
+        ]
+    },
+    {
+        "id": "7ac12a79.c2e98c",
+        "type": "comment",
+        "z": "9ae175b32b26f367",
+        "g": "c319afa4.557968",
+        "name": "Dashboard Startup",
+        "info": "",
+        "x": 245.66668701171875,
+        "y": 403.00001335144043,
+        "wires": []
+    },
+    {
+        "id": "3f58c8f3.cdbed",
+        "type": "switch",
+        "z": "9ae175b32b26f367",
+        "g": "c319afa4.557968",
+        "name": "Connect or Change",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "connect",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "change",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 668.6667327880859,
+        "y": 460.3333797454834,
+        "wires": [
+            [
+                "130b08c0.946dff"
+            ],
+            [
+                "dd4ec3f6.31e2a"
+            ]
+        ]
+    },
+    {
+        "id": "dd4ec3f6.31e2a",
+        "type": "change",
+        "z": "9ae175b32b26f367",
+        "g": "c319afa4.557968",
+        "name": "Refresh Tab",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 878.3333435058594,
+        "y": 506.00002098083496,
+        "wires": [
+            [
+                "cb47b44.cab4c48"
+            ]
+        ]
+    },
+    {
+        "id": "cb47b44.cab4c48",
+        "type": "ui_ui_control",
+        "z": "9ae175b32b26f367",
+        "g": "c319afa4.557968",
+        "name": "Refresh tab",
+        "events": "change",
+        "x": 1061.3332214355469,
+        "y": 506.33351707458496,
+        "wires": [
+            []
+        ]
     }
 ]
