@@ -32,6 +32,14 @@
         "env": []
     },
     {
+        "id": "80e2328c091f49c9",
+        "type": "tab",
+        "label": "CamBuddy",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "e9f57d902aeecba9",
         "type": "tab",
         "label": "PAR Buddy",
@@ -45,14 +53,6 @@
         "label": "Turn S3 on/off",
         "disabled": false,
         "info": ""
-    },
-    {
-        "id": "80e2328c091f49c9",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
     },
     {
         "id": "9ae175b32b26f367",
@@ -179,7 +179,9 @@
             "abd476dd6444940f"
         ],
         "x": 174,
-        "y": 419
+        "y": 419,
+        "w": 332,
+        "h": 82
     },
     {
         "id": "c319afa4.557968",
@@ -1852,7 +1854,7 @@
             {
                 "p": "PPFD",
                 "pt": "flow",
-                "to": "{\"week\":[100,250,300,500,650]}",
+                "to": "{\"week\":[100,250,300,500,650,650,800,950,950,950,950,950,950,950,950,950,950,950,950,950]}",
                 "tot": "json"
             },
             {
@@ -3348,6 +3350,83 @@
         "wires": []
     },
     {
+        "id": "04d35575eb3eefaf",
+        "type": "inject",
+        "z": "1163bcff9c10da0f",
+        "name": "Manual pump Test ON",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 640,
+        "y": 920,
+        "wires": [
+            [
+                "614a04f57490a307"
+            ]
+        ]
+    },
+    {
+        "id": "68b6cb5f0d7c8612",
+        "type": "inject",
+        "z": "1163bcff9c10da0f",
+        "name": "Manual pump test OFF",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 910,
+        "y": 940,
+        "wires": [
+            [
+                "66bf849d25aaa632"
+            ]
+        ]
+    },
+    {
+        "id": "6f03da4f17d90efd",
+        "type": "ui_template",
+        "z": "80e2328c091f49c9",
+        "group": "1f16ea14e7cf23c6",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"margin-bottom: 10px;\">\n<img src=\"http://cambuddy/stream\" width=\"400px\" height=\"350\">\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 890,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "90749f75e0cef4da",
         "type": "mqtt in",
         "z": "e9f57d902aeecba9",
@@ -3596,27 +3675,6 @@
         "x": 270,
         "y": 140,
         "wires": []
-    },
-    {
-        "id": "6f03da4f17d90efd",
-        "type": "ui_template",
-        "z": "80e2328c091f49c9",
-        "group": "1f16ea14e7cf23c6",
-        "name": "",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<div style=\"margin-bottom: 10px;\">\n<img src=\"http://192.168.86.46/\" width=\"400px\" height=\"350\">\n</div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 890,
-        "y": 440,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "14ce4cc6.d66e1b",
