@@ -40,6 +40,14 @@
         "env": []
     },
     {
+        "id": "421e80d521f48098",
+        "type": "tab",
+        "label": "Irrigation Pump",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "e9f57d902aeecba9",
         "type": "tab",
         "label": "PAR Buddy",
@@ -207,7 +215,9 @@
             "cb47b44.cab4c48"
         ],
         "x": 129.66668701171875,
-        "y": 362.00001335144043
+        "y": 362.00001335144043,
+        "w": 1027.6665344238281,
+        "h": 210.33335876464844
     },
     {
         "id": "77fed1c377eed3df",
@@ -2563,9 +2573,9 @@
         "min": "0.80",
         "max": "0.95",
         "colors": [
-            "#fffff5",
-            "#00e67a",
-            "#cb5548"
+            "#90a5c6",
+            "#265f9c",
+            "#6870ac"
         ],
         "seg1": "",
         "seg2": "",
@@ -3414,7 +3424,7 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "format": "<div style=\"margin-bottom: 10px;\">\n<img src=\"http://cambuddy/stream\" width=\"400px\" height=\"350\">\n</div>",
+        "format": "<div style=\"margin-bottom: 10px;\">\n<img src=\"http://192.168.86.46/\" width=\"400px\" height=\"350\">\n</div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -3425,6 +3435,101 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "41a64fc24a8f4d41",
+        "type": "inject",
+        "z": "80e2328c091f49c9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 710,
+        "y": 460,
+        "wires": [
+            [
+                "6f03da4f17d90efd"
+            ]
+        ]
+    },
+    {
+        "id": "676c0c9acf389e8c",
+        "type": "inject",
+        "z": "421e80d521f48098",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "30 11 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "x": 540,
+        "y": 320,
+        "wires": [
+            [
+                "304d4d2121317f1d",
+                "c58ce17594982198"
+            ]
+        ]
+    },
+    {
+        "id": "304d4d2121317f1d",
+        "type": "stoptimer",
+        "z": "421e80d521f48098",
+        "duration": "1",
+        "units": "Minute",
+        "payloadtype": "str",
+        "payloadval": "OFF",
+        "name": "",
+        "x": 740,
+        "y": 320,
+        "wires": [
+            [],
+            [
+                "c58ce17594982198"
+            ]
+        ]
+    },
+    {
+        "id": "c58ce17594982198",
+        "type": "mqtt out",
+        "z": "421e80d521f48098",
+        "name": "",
+        "topic": "cmnd/plug_fillerup_irrigation/POWER",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "77fed1c377eed3df",
+        "x": 1070,
+        "y": 280,
+        "wires": []
     },
     {
         "id": "90749f75e0cef4da",
